@@ -1,8 +1,9 @@
-import { FC, useState } from "react";
+import { useState } from "react";
 import { getMenuGacha } from "../api/menu";
+import { MenuDetail } from "../components/MenuDetail";
 import { GetMenuGachaRequest, GetMenuGachaResponse } from "../types/menu";
 
-export const Home: FC = () => {
+export const Home: React.FC = () => {
   const initialMenus: GetMenuGachaResponse = {
     items: [],
   };
@@ -29,12 +30,7 @@ export const Home: FC = () => {
           <div>合計金額: {menus.totalPrice}</div>
         </div>
         {menus.items.map((item, index) => (
-          <div key={index} className="mt-5 mb-5">
-            <div>{item.name}</div>
-            <div>価格: {item.price}円</div>
-            <div>カテゴリ: {item.category}</div>
-            <div>{item.mealTimeType}</div>
-          </div>
+          <MenuDetail menu={item} index={index} />
         ))}
       </div>
     </>

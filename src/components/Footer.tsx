@@ -1,6 +1,4 @@
-import { FC } from "react";
-
-export const Footer: FC = () => {
+export const Footer: React.FC = () => {
   return (
     <div>
       <h1>フッター</h1>

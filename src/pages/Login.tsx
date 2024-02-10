@@ -1,6 +1,4 @@
-import { FC } from "react";
-
-export const Login: FC = () => {
+export const Login: React.FC = () => {
   return (
     <div>
       <h1>ログイン</h1>
